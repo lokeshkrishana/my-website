@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Login Page</title>
+  <title>Fake Login Page</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -48,6 +48,11 @@
     button:hover {
       background-color: #0056b3;
     }
+
+    #login-message {
+      margin-top: 20px;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -57,11 +62,33 @@
   <!-- Page Title -->
   <h1>Login</h1>
 
-  <!-- Login Form -->
-  <form>
-    <input type="text" placeholder="Username" name="Enter Staff ID/ Student ID" required><br>
-    <input type="password" placeholder="Enter Password" name="password" required><br>
+  <!-- Fake Login Form -->
+  <form onsubmit="return fakeLogin(event)">
+    <input type="text" id="username" placeholder="Username" required><br>
+    <input type="password" id="password" placeholder="Password" required><br>
     <button type="submit">Login</button>
   </form>
+
+  <!-- Fake Message -->
+  <p id="login-message"></p>
+
+  <!-- Fake Login Script -->
+  <script>
+    function fakeLogin(event) {
+      event.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const message = document.getElementById("login-message");
+
+      message.textContent = "Welcome, " + username + "VALID";
+      message.style.color = "green";
+
+      // Clear inputs
+      document.getElementById("username").value = "";
+      document.getElementById("password").value = "";
+
+      return false;
+    }
+  </script>
 </body>
 </html>
