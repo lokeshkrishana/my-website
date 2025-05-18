@@ -53,6 +53,14 @@
       margin-top: 20px;
       font-weight: bold;
     }
+
+    .error {
+      color: red;
+    }
+
+    .success {
+      color: green;
+    }
   </style>
 </head>
 <body>
@@ -75,19 +83,27 @@
   <!-- Fake Login Script -->
   <script>
     function fakeLogin(event) {
-      event.preventDefault();
+      event.preventDefault();  // Prevent actual form submission
 
+      // Get user input
       const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
       const message = document.getElementById("login-message");
 
-      message.textContent = "Welcome, " + username + "VALID";
-      message.style.color = "green";
+      // Simple fake check for username and password
+      if (username === "212222040087" && password === "welcome") {
+        message.textContent = "Welcome, admin! You are now logged in (not really 😄)";
+        message.className = "success"; // Add success class for styling
+      } else {
+        message.textContent = "Invalid username or password!";
+        message.className = "error"; // Add error class for styling
+      }
 
-      // Clear inputs
+      // Clear the form fields after submitting
       document.getElementById("username").value = "";
       document.getElementById("password").value = "";
 
-      return false;
+      return false;  // Prevent form from actually submitting
     }
   </script>
 </body>
