@@ -2,114 +2,139 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Fake Login Page</title>
+  <title>SIMATS Transport Pass</title>
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f0f8ff;
       text-align: center;
-      padding: 50px;
     }
 
-    img {
-      margin-bottom: 20px;
+    /* Top Blue Bar */
+    .top-bar {
+      background-color: #007BFF;
+      color: white;
+      padding: 15px 0;
+      font-size: 22px;
+      font-weight: bold;
     }
 
-    h1 {
-      color: #007BFF;
-      margin-bottom: 30px;
+    /* Validity Section */
+    .validity-section {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 0;
     }
 
-    form {
-      display: inline-block;
-      background: #fff;
-      padding: 20px 30px;
+    .validity-section .date {
+      font-size: 16px;
+    }
+
+    .validity-section .status {
+      font-size: 28px;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    /* Profile Photo */
+    .photo {
+      margin: 20px auto 10px;
+    }
+
+    .photo img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid #007BFF;
+    }
+
+    /* QR and Details Section */
+    .details {
+      background-color: white;
+      margin: 20px auto;
+      padding: 15px;
+      width: 80%;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    input {
-      padding: 10px;
+    .qr-code {
       margin: 10px 0;
-      width: 200px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
     }
 
-    button {
-      padding: 10px 20px;
-      background-color: #007BFF;
+    .student-id {
+      font-weight: bold;
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .department {
+      background-color: #28a745;
       color: white;
-      border: none;
+      padding: 8px;
       border-radius: 5px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
-    #login-message {
-      margin-top: 20px;
+      margin-top: 10px;
+      display: inline-block;
       font-weight: bold;
     }
 
-    .error {
-      color: red;
+    /* Bottom Navigation */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #007BFF;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 10px 0;
     }
 
-    .success {
-      color: green;
+    .bottom-nav i {
+      color: white;
+      font-size: 24px;
     }
   </style>
+
+  <!-- FontAwesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <!-- Logo -->
-  <img src="logo.png" alt="My Logo" width="150">
 
-  <!-- Page Title -->
-  <h1>Login</h1>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    SIMATS TRANSPORTS
+  </div>
 
-  <!-- Fake Login Form -->
-  <form onsubmit="return fakeLogin(event)">
-    <input type="text" id="username" placeholder="Username" required><br>
-    <input type="password" id="password" placeholder="Password" required><br>
-    <button type="submit">Login</button>
-  </form>
+  <!-- Validity Status -->
+  <div class="validity-section">
+    <div class="date">18-MAY-2025</div>
+    <div class="status">VALID</div>
+  </div>
 
-  <!-- Fake Message -->
-  <p id="login-message"></p>
+  <!-- Photo -->
+  <div class="photo">
+    <img src="https://via.placeholder.com/150" alt="User Photo">
+  </div>
 
-  <!-- Fake Login Script -->
-  <script>
-    function fakeLogin(event) {
-      event.preventDefault();  // Prevent actual form submission
+  <!-- QR and Details -->
+  <div class="details">
+    <div class="qr-code">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?data=212222040087&size=100x100" alt="QR Code">
+    </div>
+    <div class="student-id">212222040087</div>
+    <div class="department">AUTONOM II</div>
+  </div>
 
-      // Get user input
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
-      const message = document.getElementById("login-message");
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <i class="fas fa-user"></i>
+    <i class="fas fa-home"></i>
+    <i class="fas fa-bell"></i>
+  </div>
 
-      // Simple fake check for username and password
-      if (username === "admin" && password === "1234") {
-        message.textContent = "Welcome, admin! You are now logged in (not really 😄)";
-        message.className = "success"; // Add success class for styling
-
-        // Redirect to the dashboard page after 1 second (to simulate a "real" login)
-        setTimeout(function() {
-          window.location.href = "dashboard.html";  // Redirect to dashboard
-        }, 1000);  // 1 second delay before redirecting
-      } else {
-        message.textContent = "Invalid username or password!";
-        message.className = "error"; // Add error class for styling
-      }
-
-      // Clear the form fields after submitting
-      document.getElementById("username").value = "";
-      document.getElementById("password").value = "";
-
-      return false;  // Prevent form from actually submitting
-    }
-  </script>
 </body>
 </html>
