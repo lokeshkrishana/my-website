@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>SIMATS Transport ID</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       margin: 0;
@@ -11,18 +12,35 @@
       text-align: center;
     }
 
-    .header {
+    .top-bar {
       background-color: #007BFF;
       color: white;
-      padding: 15px;
-      font-size: 20px;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-bar img.logo {
+      height: 35px;
+      margin-left: 10px;
+    }
+
+    .top-bar .title {
+      font-size: 18px;
       font-weight: bold;
+      flex: 1;
+    }
+
+    .top-bar img.menu {
+      height: 24px;
+      margin-right: 10px;
     }
 
     .valid-section {
       background-color: #28a745;
       color: white;
-      padding: 10px;
+      padding: 10px 0;
       font-size: 18px;
       font-weight: bold;
     }
@@ -35,12 +53,9 @@
       border-radius: 5px;
     }
 
-    .qr {
-      margin: 20px 0 10px 0;
-    }
-
     .qr img {
       width: 100px;
+      margin-top: 10px;
     }
 
     .id-number {
@@ -55,7 +70,7 @@
       font-size: 18px;
       font-weight: bold;
       padding: 10px;
-      margin: 20px auto;
+      margin: 15px auto;
       width: 80%;
       border-radius: 5px;
     }
@@ -67,42 +82,47 @@
       background-color: #007BFF;
       display: flex;
       justify-content: space-around;
-      padding: 10px 0;
+      align-items: center;
+      padding: 8px 0;
     }
 
     .footer img {
-      width: 24px;
+      width: 28px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <div class="header">SIMATS TRANSPORTS</div>
+  <!-- Header with logo, title, and menu icon -->
+  <div class="top-bar">
+    <img src="simats-logo.png" alt="Logo" class="logo">
+    <div class="title">SIMATS TRANSPORTS</div>
+    <img src="menu-icon.png" alt="Menu" class="menu">
+  </div>
 
-  <!-- Valid Date -->
+  <!-- Validity section -->
   <div class="valid-section">
     18-MAY-2025<br>VALID
   </div>
 
-  <!-- User Photo -->
+  <!-- Profile photo -->
   <div class="photo">
-    <img src="f724e159-87e6-4945-beda-97d4bd0882bc.png" alt="User Photo">
+    <img src="user.png" alt="User Photo">
   </div>
 
-  <!-- QR Code -->
+  <!-- QR code -->
   <div class="qr">
-    <img src="f724e159-87e6-4945-beda-97d4bd0882bc.png" alt="QR Code">
+    <img src="qrcode.png" alt="QR Code">
   </div>
 
-  <!-- ID Number -->
-    <div class="id-number">Lokesh K</div>
+  <!-- ID number -->
+  <div class="id-number">Lokesh K</div>
   <div class="id-number">212222040087</div>
 
-  <!-- Name Section -->
-  <div class="name-section">ARAKKONAM II</div> 
+  <!-- Location name -->
+  <div class="name-section">ARAKKONAM II</div>
 
-  <!-- Footer with icons -->
+  <!-- Bottom Navigation Bar -->
   <div class="footer">
     <img src="profile-icon.png" alt="Profile">
     <img src="home-icon.png" alt="Home">
