@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>SIMATS Transport Pass</title>
+  <title>SIMATS Transport ID</title>
   <style>
     body {
       margin: 0;
@@ -11,130 +11,101 @@
       text-align: center;
     }
 
-    /* Top Blue Bar */
-    .top-bar {
+    .header {
       background-color: #007BFF;
       color: white;
-      padding: 15px 0;
-      font-size: 22px;
+      padding: 15px;
+      font-size: 20px;
       font-weight: bold;
     }
 
-    /* Validity Section */
-    .validity-section {
+    .valid-section {
       background-color: #28a745;
       color: white;
-      padding: 10px 0;
-    }
-
-    .validity-section .date {
-      font-size: 16px;
-    }
-
-    .validity-section .status {
-      font-size: 28px;
+      padding: 10px;
+      font-size: 18px;
       font-weight: bold;
-      margin-top: 5px;
-    }
-
-    /* Profile Photo */
-    .photo {
-      margin: 20px auto 10px;
     }
 
     .photo img {
-      width: 150px;
-      height: 150px;
+      width: 140px;
+      height: 180px;
       object-fit: cover;
-      border-radius: 10px;
-      border: 2px solid #007BFF;
+      margin-top: 15px;
+      border-radius: 5px;
     }
 
-    /* QR and Details Section */
-    .details {
-      background-color: white;
-      margin: 20px auto;
-      padding: 15px;
-      width: 80%;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    .qr {
+      margin: 20px 0 10px 0;
     }
 
-    .qr-code {
+    .qr img {
+      width: 100px;
+    }
+
+    .id-number {
+      font-size: 18px;
+      font-weight: bold;
       margin: 10px 0;
     }
 
-    .student-id {
-      font-weight: bold;
-      font-size: 18px;
-      margin-top: 10px;
-    }
-
-    .department {
+    .name-section {
       background-color: #28a745;
       color: white;
-      padding: 8px;
-      border-radius: 5px;
-      margin-top: 10px;
-      display: inline-block;
+      font-size: 18px;
       font-weight: bold;
+      padding: 10px;
+      margin: 20px auto;
+      width: 80%;
+      border-radius: 5px;
     }
 
-    /* Bottom Navigation */
-    .bottom-nav {
+    .footer {
       position: fixed;
       bottom: 0;
-      left: 0;
       width: 100%;
       background-color: #007BFF;
       display: flex;
       justify-content: space-around;
-      align-items: center;
       padding: 10px 0;
     }
 
-    .bottom-nav i {
-      color: white;
-      font-size: 24px;
+    .footer img {
+      width: 24px;
     }
   </style>
-
-  <!-- FontAwesome for icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-  <!-- Top Bar -->
-  <div class="top-bar">
-    SIMATS TRANSPORTS
+  <!-- Header -->
+  <div class="header">SIMATS TRANSPORTS</div>
+
+  <!-- Valid Date -->
+  <div class="valid-section">
+    18-MAY-2025<br>VALID
   </div>
 
-  <!-- Validity Status -->
-  <div class="validity-section">
-    <div class="date">18-MAY-2025</div>
-    <div class="status">VALID</div>
-  </div>
-
-  <!-- Photo -->
+  <!-- User Photo -->
   <div class="photo">
-<img src="user.jpg" alt="User Photo">
+    <img src="user.jpg" alt="User Photo">
   </div>
 
-  <!-- QR and Details -->
-  <div class="details">
-    <div class="qr-code">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?data=212222040087&size=100x100" alt="QR Code">
-    </div>
-    <div class="student-id">Lokesh K</div>
-    <div class="student-id">212222040087</div>
-    <div class="department">ARAKKONAM II</div>
+  <!-- QR Code -->
+  <div class="qr">
+    <img src="qrcode.jpg" alt="QR Code">
   </div>
 
-  <!-- Bottom Navigation -->
-  <div class="bottom-nav">
-    <i class="fas fa-user"></i>
-    <i class="fas fa-home"></i>
-    <i class="fas fa-bell"></i>
+  <!-- ID Number -->
+  <div class="id-number">212222040087</div>
+
+  <!-- Name Section -->
+  <div class="name-section">ARUN KONAM II</div>
+
+  <!-- Footer with icons -->
+  <div class="footer">
+    <img src="profile-icon.png" alt="Profile">
+    <img src="home-icon.png" alt="Home">
+    <img src="bell-icon.png" alt="Notification">
   </div>
 
 </body>
